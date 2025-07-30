@@ -18,11 +18,17 @@ export default function mainMenu() {
     ];
 
     k.add([
-        k.text("SONIC RUN", {font:"mania", size:100}),
-        k.pos(k.center()),
+        k.text("SONIC RUN", {font:"mania", size:200}),
+        k.pos(k.center().x, 200),
         k.anchor("center")
-    ]);
-    
+    ]); 
+
+    k.add([
+        k.text("Press Space/Click/Touch to play game", {font:"mania", size:100}),
+        k.pos(k.center().x, 400),
+        k.anchor("center")
+    ]); 
+
     makeSonic(k.vec2(200,745));
 
     k.onUpdate(() => {
