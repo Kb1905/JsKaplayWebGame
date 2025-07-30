@@ -25,4 +25,5 @@ export function makeSonic(pos) {
             },
         },
     ]);
+    return sonic;
 }
