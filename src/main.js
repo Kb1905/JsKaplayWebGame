@@ -32,11 +32,11 @@ k.loadSprite("motobug", "graphics/motobug.png", {
 k.loadFont("mania","fonts/mania.ttf");
 
 //Loading the sound effects including the background music
-k.loadSound("destroy", "sounds/Destroy.mp3");
-k.loadSound("hurt", "sounds/Hurt.mp3");
-k.loadSound("hyper-ring", "sounds/HyperRing.mp3");
-k.loadSound("jump", "sounds/Jump.mp3");
-k.loadSound("ring", "sounds/Ring.mp3");
+k.loadSound("destroy", "sounds/Destroy.wav");
+k.loadSound("hurt", "sounds/Hurt.wav");
+k.loadSound("hyper-ring", "sounds/HyperRing.wav");
+k.loadSound("jump", "sounds/Jump.wav");
+k.loadSound("ring", "sounds/Ring.wav");
 k.loadSound("city", "sounds/city.mp3");
 
 k.scene("main-menu",mainMenu);
