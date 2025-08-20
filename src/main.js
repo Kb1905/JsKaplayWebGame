@@ -33,7 +33,7 @@ k.loadSprite("eggbot", "graphics/eggbot.png", {
     anims: {
         fly: {from: 0, to: 5, loop:true, speed: 8 },
     }
-})
+}) 
 
 //Loading the font
 k.loadFont("mania","fonts/mania.ttf");

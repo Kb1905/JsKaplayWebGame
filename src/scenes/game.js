@@ -1,3 +1,4 @@
+import { makeEggBot } from "../entities/eggbot";
 import { makeMotobug } from "../entities/motobug";
 import { makeSonic } from "../entities/sonic";
 import k from "../kaplayCtx";
@@ -38,6 +39,11 @@ export default function game() {
 
     });
 
+    // sonic.onCollide("airEnemy", (enemy) => {
+    //     k.play("hurt");
+    //     k.go("gameover");
+    // })
+
     const spawnMotoBug = () => {
         const motobug = makeMotobug(k.vec2(1950, 773));
         motobug.onUpdate(() => {
@@ -55,6 +61,22 @@ export default function game() {
     };
     spawnMotoBug();
 
+    const spawnEggBot = () => {
+        const eggbot = makeEggBot(k.vec2(1950, 470));
+        eggbot.onUpdate(() => {
+            if (gameSpeed < 3000) {
+                eggbot.move(-(gameSpeed + 300), 0);
+                return;
+            }
+            eggbot.move(-gameSpeed, 0);
+        });
+        eggbot.onExitScreen(() => {
+            if (eggbot.pos.x < 0) k.destroy(eggbot);
+        });
+        const waitTime = k.rand(2,8);
+        k.wait(waitTime, spawnEggBot);
+    };
+    spawnEggBot();
     
     k.add([
         k.rect(1920,300),
