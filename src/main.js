@@ -27,6 +27,13 @@ k.loadSprite("motobug", "graphics/motobug.png", {
         run: {from: 0, to: 4, loop: true, speed: 8 },
     },
 });
+k.loadSprite("eggbot", "graphics/eggbot.png", {
+    sliceX: 3,
+    sliceY: 3,
+    anims: {
+        fly: {from: 0, to: 5, loop:true, speed: 8 },
+    }
+})
 
 //Loading the font
 k.loadFont("mania","fonts/mania.ttf");
