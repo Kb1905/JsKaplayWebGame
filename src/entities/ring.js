@@ -1,16 +1,13 @@
 import k from "../kaplayCtx";
 
-let enemyIdCounter = 1;
-
-export function makeMotobug(pos) {
+export function makeRing(pos) {
     return k.add([
-        k.sprite("motobug", {anim: "run"}),
+        k.sprite("ring", {anim: "spin"}),
+        k.area(),
         k.scale(4),
-        k.area({shape: new k.Rect(k.vec2(-5,0), 32, 32 )}), //area helps add a hitbox
         k.anchor("center"), //anchor allows to change the origin point, the deafult is usually top left
         k.pos(pos),
         k.offscreen(),
-        "enemy",
-        
+        "ring",
     ]);
 }

@@ -1,6 +1,7 @@
 import { makeEggBot } from "../entities/eggbot";
 import { makeMotobug } from "../entities/motobug";
 import { makeSonic } from "../entities/sonic";
+import { makeRing } from "../entities/ring";
 import k from "../kaplayCtx";
 
 export default function game() {
@@ -78,6 +79,25 @@ export default function game() {
     };
     spawnEggBot();
     
+    const spawnRing =() => {
+        const ring = makeRing(k.vec2(1950,745))
+        ring.onUpdate(() => {
+            if (gameSpeed < 3000) {
+                ring.move(-(gameSpeed + 300), 0);
+                return;
+            }
+            ring.move(-gameSpeed, 0);
+        });
+        ring.onExitScreen(() => {
+            if (ring.pos.x < 0) k.destroy(ring);
+        });
+        const waitTime = k.rand(0.5,3);
+        k.wait(waitTime, spawnRing);
+    };
+    spawnRing;
+
+
+
     k.add([
         k.rect(1920,300),
         k.opacity(0),
